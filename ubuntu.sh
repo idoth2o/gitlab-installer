@@ -79,7 +79,7 @@ mysql-server-5.5        mysql-server-5.5/start_on_boot  boolean true
 mysql-server-5.5        mysql-server-5.5/really_downgrade       boolean false
 __EOT__
 
-DEBIAN_FRONTEND=noninteractive apt-get install -y mysql-server mysql-client libmysqlclient-dev
+DEBIAN_FRONTEND=noninteractive apt-get install -y mysql-server mysql-client libmysqlclient-dev libmysql-ruby
 
 mysql -u root -e "CREATE USER 'gitlab'@'localhost' IDENTIFIED BY '$MYSQL_PASSWORD';"
 mysql -u root -e 'CREATE DATABASE IF NOT EXISTS `gitlabhq_production` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`;'
